@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 //Props are just arguments that you pass in react components to later pass dynamic data when you call the component
 // const Person = (props)=>{
@@ -17,7 +17,15 @@ import { useState } from 'react';
 const App= () =>{
   // const name = "Bickey"; // below we are returning JSX and we can write any JS code inside {} 
   // const isNameShowing = true;
-  const [counter , setCounter] = useState(0); //here we are de-structuring array and assigning useState(0). What this does is it sets the initial value of counter to 0 and we will use setCounter function to set the value of counter . React hooks must be called inside react function component
+  const [counter , setCounter] = useState(0); //here we are de-structuring array and assigning useState(0). What this does is it sets the initial value of counter to 0 and we will use setCounter function to set the value of counter . React hooks must be called inside react function component. We later used useEffect and setCounter(100) hence it is showing 100 initially
+   
+  useEffect(()=>{
+    setCounter(100);//this sets the counter to 100 but when ever we try to increase or decrease the counter it will set it back to 100 again. To solve this we add second parameter to useEffect which we call dependency array.
+  },[]); // when the dependency arry is left blank, the function runs only once  initially.
+
+  // useEffect(()=>{
+  //   alert('you have changed the counter to '+counter)
+  // },[counter]);//by putting counter inside the dependency array, the alert will show up everytime there is change in the value of counter. that means the arrow function will load only when the value of counter changes 
   return (
     <div className="App">
       {/* <h1>Hello, {isNameShowing ? name : 'Your name is not showing'}!!!</h1>

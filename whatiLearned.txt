@@ -1,0 +1,19 @@
+1. Types of components : Class baed and Functional
+
+2. JSX : It is used in React to describe what the UI should look like.
+
+3. React Fragment - If you want to render two different elements, you need to wrap them inside react fragment  
+<> 
+<h1>Hello</h1> 
+<h2>Hi</h2> 
+</> 
+
+4. Creating and calling the components: Created using arrow function. Called : <ComponentName/>
+
+5. Props : They are just shorter way of saying Properties. To have different value for the same component in React we have something called Props. Props allow you to pass dynamic data through react components. Props are just arguments that you pass in react components. Using Props, we can use same components but have them different data. 
+
+7. State : State in React is plain JS object used by React to represent a piece of information about component's current situation. State is completely managed by the component itself. To use the state, we import "useState" hook from react. 
+
+8. Hooks : Hook in React is a function whose name starts from "use".
+
+I will continue learning React in different project (react_js-oct26)
